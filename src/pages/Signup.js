@@ -14,7 +14,10 @@ import * as Yup from "yup";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
 const signUpValidationSchema = Yup.object().shape({
-  displayName: Yup.string().required("Display Name is required!!"),
+  displayName: Yup.string()
+  .min(2, "Too Short!")
+  .max(50, "Too Long!")
+  .required("Display Name is required!!"),
   email: Yup.string().email("Invalid Email").required("Email is required!!"),
   password: Yup.string()
     .required("No password provided.")
@@ -36,10 +39,10 @@ const stylesFunc = makeStyles((theme) => ({
     margin: "1rem",
   },
   login: {
-    textDecoration: 'none',
-    fontWeight: '600',
-    paddingLeft : '0.5rem'
-  }  
+    textDecoration: "none",
+    fontWeight: "600",
+    paddingLeft: "0.5rem",
+  },
 }));
 
 function Signup() {
@@ -125,7 +128,11 @@ function Signup() {
         </Grid>
       </form>
       <p>
-        Already have an account? <a className={signupStyles.login}  href="/login"> Login.</a>
+        Already have an account?{" "}
+        <a className={signupStyles.login} href="/login">
+          {" "}
+          Login.
+        </a>
       </p>
     </Container>
   );
