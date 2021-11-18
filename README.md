@@ -2,7 +2,7 @@
 
 ![react-share](https://user-images.githubusercontent.com/67653402/142279058-ad992287-2df4-45d8-8840-fdb88e69a47a.gif)
 
-##.env file
+## .env file
 
 ```
 REACT_APP_API_KEY=
